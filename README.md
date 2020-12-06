@@ -9,6 +9,16 @@ by front end application.
 
 All the comment below are from original Github project which explains the structure of the whole project.
 
+## WANT TO RUN WITHOUT READING ANYTHING?
+
+`Steps to be followed`:
+-   Make a copy of `.env.example` and call it `.env`
+-   Run command `npm install`
+-   Run command `npm start`
+-   On browser: Try `http://localhost:8123/api/v1/user/greet-me?name=kvs` OR `http://localhost:8123/api/v1/status`
+-	Response of `/api/v1/status`: `{"message":"OK","timestamp":"2020-12-06T04:19:02.924Z","IP":"::1","URL":"/api/v1/status"}`
+-	Response of `/api/v1/user/greet-me?name=kvs`: `{"message":"GREET_USER","user":"kvs"}`
+
 ## Structure
 
 `src` contains the whole source code of the api.
