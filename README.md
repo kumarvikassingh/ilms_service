@@ -164,8 +164,8 @@ const validation = require('../../validations/product.validation');
 
 ...
 router.route('/')
-    .get(validate(validation.getProduct), controller.getProduct)
-    .post(validate(validation.createProduct), controller.createProduct)
+    .get(validate.validate(validation.getProduct), controller.getProduct)
+    .post(validate.validate(validation.createProduct), controller.createProduct)
 ```
 
 <br>
