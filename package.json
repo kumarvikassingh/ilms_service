@@ -13,7 +13,8 @@
 		"pack": "rm -rf pkg/*.tgz && npm pack && mkdir -p pkg && mv *.tgz pkg/",
 		"docker-build": "docker build -f deployment/Dockerfile . -t $npm_package_name:$npm_package_version --build-arg APP_NAME=$npm_package_name",
 		"update-ecosystem": "./bin/update-ecosystem",
-		"build": "npm run update-ecosystem"
+		"build": "npm run update-ecosystem",
+		"start": "node src/index"
 	},
 	"devDependencies": {
 		"chai": "^4.2.0",

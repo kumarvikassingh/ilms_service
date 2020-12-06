@@ -9,9 +9,9 @@ const router = express.Router();
 
 // un protected route
 // Notice the same names of functions/object in validation and controller
-router.route('/greet-me').get(validate(validation.me), controller.me);
+router.route('/greet-me').get(validate.validate(validation.me), controller.me);
 
 // protected route
-router.route('/greet-me-protected').get(authenticated, validate(validation.me), controller.me);
+router.route('/greet-me-protected').get(authenticated, validate.validate(validation.me), controller.me);
 
 module.exports = router;
