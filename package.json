@@ -41,6 +41,7 @@
 		"joi": "^17.3.0",
 		"moment": "^2.29.1",
 		"morgan": "^1.10.0",
+		"mssql": "^6.3.0",
 		"session-file-store": "^1.5.0",
 		"tmp": "0.2.1",
 		"winston": "^3.3.3",

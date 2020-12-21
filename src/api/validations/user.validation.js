@@ -14,4 +14,5 @@ module.exports = {
 		//     name: Joi.string().required(),
 		// },
 	},
+	test_mssql: {},
 };

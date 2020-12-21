@@ -10,3 +10,17 @@ exports.me = (req, res, next) => {
 		next(e);
 	}
 };
+
+exports.test_mssql = (req, res, next) => {
+	try {
+		db.querySql(
+			'select * from table_name where id = @id order by dataid',
+			{ id: req.params.id },
+			function (err, result) {
+				res.json(result.recordset);
+			}
+		);
+	} catch (e) {
+		next(e);
+	}
+};
