@@ -11,6 +11,7 @@ var getConnection = function (callback) {
 	if (!callback) {
 		callback = function () {};
 	}
+	console.log(conf);
 	var con = new mssql.ConnectionPool(conf, function (err) {
 		if (err) {
 			throw err;

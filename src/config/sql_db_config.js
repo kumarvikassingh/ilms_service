@@ -3,7 +3,7 @@ var app = {
 	password: process.env.password,
 	server: process.env.server,
 	database: process.env.database,
-	port: 50001,
+	port: 1433,
 	options: {
 		encrypt: false, // Use this if you're on Windows Azure
 	},

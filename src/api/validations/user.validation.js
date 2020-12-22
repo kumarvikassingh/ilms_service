@@ -14,5 +14,9 @@ module.exports = {
 		//     name: Joi.string().required(),
 		// },
 	},
-	test_mssql: {},
+	test_mssql: {
+		query: Joi.object({
+			id: Joi.string().required(),
+		}),
+	},
 };
