@@ -19,6 +19,19 @@ All the comment below are from original Github project which explains the struct
 -	Response of `/api/v1/status`: `{"message":"OK","timestamp":"2020-12-06T04:19:02.924Z","IP":"::1","URL":"/api/v1/status"}`
 -	Response of `/api/v1/user/greet-me?name=kvs`: `{"message":"GREET_USER","user":"kvs"}`
 
+## Crypto Feature
+-   Encrypt feature 
+-	POST API: http://localhost:8123/api/v1/user/encrypt
+	{
+		"name" : "my name is khan"
+	}
+
+-   Decrypt feature 
+-	POST API: http://localhost:8123/api/v1/user/decrypt
+	{
+    	"name" : "U2FsdGVkX18jXZhA4wNViPX5Jr6F9ZRD5ky0EtGLc+E="
+	}
+
 ## Structure
 
 `src` contains the whole source code of the api.
