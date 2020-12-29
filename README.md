@@ -33,7 +33,7 @@ All the comment below are from original Github project which explains the struct
 	}
 
 ## MSSQL feature for SQL server connection
-I am using mssql component to communicate with SQL server. 
+*   > I am using mssql component to communicate with SQL server. 
 https://www.npmjs.com/package/mssql
 Examples: 
 	http://localhost:8123/api/v1/user/test_mssql?id=1
@@ -51,9 +51,9 @@ Examples:
 	Output in json format:
 	[{"CustomerID":1,"NameStyle":false,"Title":"Mr.","FirstName":"Orlando","MiddleName":"N.","LastName":"Gee","Suffix":null,"CompanyName":"A Bike Store","SalesPerson":"adventure-works\\pamela0","EmailAddress":"orlando0@adventure-works.com","Phone":"245-555-0173","PasswordHash":"L/Rlwxzp4w7RWmEgXX+/A7cXaePEPcp+KwQhl2fJL7w=","PasswordSalt":"1KjXYs4=","rowguid":"3F5AE95E-B87D-4AED-95B4-C3797AFCB74F","ModifiedDate":"2005-08-01T00:00:00.000Z"},{"CustomerID":2,"NameStyle":false,"Title":"Mr.","FirstName":"Keith","MiddleName":null,"LastName":"Harris","Suffix":null,"CompanyName":"Progressive Sports","SalesPerson":"adventure-works\\david8","EmailAddress":"keith0@adventure-works.com","Phone":"170-555-0127","PasswordHash":"YPdtRdvqeAhj6wyxEsFdshBDNXxkCXn+CRgbvJItknw=","PasswordSalt":"fs1ZGhY=","rowguid":"E552F657-A9AF-4A7D-A645-C429D6E02491","ModifiedDate":"2006-08-01T00:00:00.000Z"},{"CustomerID":29816,"NameStyle":false,"Title":"Mr.","FirstName":"Keith","MiddleName":null,"LastName":"Harris","Suffix":null,"CompanyName":"Progressive Sports","SalesPerson":"adventure-works\\david8","EmailAddress":"keith0@adventure-works.com","Phone":"170-555-0127","PasswordHash":"YPdtRdvqeAhj6wyxEsFdshBDNXxkCXn+CRgbvJItknw=","PasswordSalt":"fs1ZGhY=","rowguid":"E10291DA-B850-451C-9A22-DD4E1DBA22CC","ModifiedDate":"2006-08-01T00:00:00.000Z"}]
 
-The service code is at location: src\api\services\customer\customer.service.js
-src\api\repository\mssql\sql_db.js has all base CRUD methods defined 
-src\config\sql_db_config.js has all configuration setup details
+-   The service code is at location: `src\api\services\customer\customer.service.js`
+-   `src\api\repository\mssql\sql_db.js` has all base CRUD methods defined 
+-   `src\config\sql_db_config.js` has all configuration setup details
 
 
 ## Structure
