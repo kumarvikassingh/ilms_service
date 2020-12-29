@@ -19,6 +19,12 @@ module.exports = {
 			id: Joi.string().required(),
 		}),
 	},
+	test_mssql_multiple_args: {
+		query: Joi.object({
+			id: Joi.string().required(),
+			name: Joi.string().required(),
+		}),
+	},
 	encrypt: {
 		body: Joi.object({
 			name: Joi.string().required(),

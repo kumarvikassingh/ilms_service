@@ -11,11 +11,11 @@ exports.me = (req, res, next) => {
 
 		cryptoService.encrypt(name, function (result) {
 			cryptoText = result;
-			console.log('Encrypted data: ' + cryptoText);
+			console.debug('Encrypted data: ' + cryptoText);
 		});
 
 		cryptoService.decrypt(cryptoText, function (result) {
-			console.log('decrypt data: ' + result);
+			console.debug('decrypt data: ' + result);
 		});
 
 		const response = responseService.greetUser(name);
@@ -27,11 +27,11 @@ exports.me = (req, res, next) => {
 
 exports.encrypt = (req, res, next) => {
 	try {
-		console.log('encrypt: START');
+		console.debug('encrypt: START');
 		const { name } = req.body;
-		console.log('encrypt: name: ' + name);
+		console.debug('encrypt: name: ' + name);
 		cryptoService.encrypt(name, function (result) {
-			console.log('Encrypted data: ' + result);
+			console.debug('Encrypted data: ' + result);
 			res.status(httpStatus.OK).json(result);
 		});
 	} catch (e) {
@@ -53,16 +53,35 @@ exports.decrypt = (req, res, next) => {
 };
 
 exports.test_mssql = (req, res, next) => {
-	console.log('Calling user.controller test_mssql API: ' + JSON.stringify(req.query));
+	console.debug('Calling user.controller test_mssql API: ' + JSON.stringify(req.query));
 	try {
 		const { id } = req.query;
-		console.log('user.controller test_mssql calling customerService.getCustomer');
+		console.debug('user.controller test_mssql calling customerService.getCustomer');
 		customerService.getCustomer(id, function (err, result) {
 			if (err) {
-				console.log('user.controller test_mssql ERROR: ' + err);
+				console.debug('user.controller test_mssql ERROR: ' + err);
 				return err.message;
 			} else {
-				console.log('user.controller test_mssql response: ' + JSON.stringify(result));
+				console.debug('user.controller test_mssql response: ' + JSON.stringify(result));
+				res.status(httpStatus.OK).json(result);
+			}
+		});
+	} catch (e) {
+		next(e);
+	}
+};
+
+exports.test_mssql_multiple_args = (req, res, next) => {
+	console.debug('Calling user.controller test_mssql_multiple_args API: ' + JSON.stringify(req.query));
+	try {
+		// const { id } = req.query;
+		console.debug('user.controller test_mssql_multiple_args calling customerService.getCustomer2');
+		customerService.getCustomer2(req.query, function (err, result) {
+			if (err) {
+				console.debug('user.controller test_mssql_multiple_args ERROR: ' + err);
+				return err.message;
+			} else {
+				console.debug('user.controller test_mssql_multiple_args response: ' + JSON.stringify(result));
 				res.status(httpStatus.OK).json(result);
 			}
 		});

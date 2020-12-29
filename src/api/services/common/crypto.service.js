@@ -10,7 +10,7 @@ const key = crypto.securityKey;
 
 class CryptoService {
 	static async encrypt(payload, callback) {
-		console.log('Encrypt key: ' + key);
+		console.debug('Encrypt key: ' + key);
 		if (!payload) {
 			return '';
 		}
@@ -18,7 +18,7 @@ class CryptoService {
 			const encryptedPayload = CryptoJS.AES.encrypt(payload, key).toString();
 			callback(encryptedPayload);
 		} catch (error) {
-			console.log('Error occured while encrypting the text: ', error);
+			console.debug('Error occured while encrypting the text: ', error);
 			throw error;
 		}
 	}
@@ -27,12 +27,12 @@ class CryptoService {
 		if (!payload) {
 			return '';
 		}
-		console.log('Decrypt key: ' + key);
+		console.debug('Decrypt key: ' + key);
 		try {
 			const decryptedPayload = CryptoJS.AES.decrypt(payload, key).toString(CryptoJS.enc.Utf8);
 			callback(decryptedPayload);
 		} catch (error) {
-			console.log('Error occured while decrypting the text: ', error);
+			console.debug('Error occured while decrypting the text: ', error);
 			throw error;
 		}
 	}

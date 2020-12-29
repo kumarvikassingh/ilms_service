@@ -2,7 +2,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const log = (...msg) => console.log('[update-ecosystem]', ...msg);
+const log = (...msg) => console.debug('[update-ecosystem]', ...msg);
 
 let defaults = {};
 const defaultEcosystemFilePath = path.join(process.cwd(), 'deployment', 'ecosystem.default.js');

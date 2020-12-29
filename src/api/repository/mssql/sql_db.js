@@ -11,7 +11,7 @@ var getConnection = function (callback) {
 	if (!callback) {
 		callback = function () {};
 	}
-	console.log(conf);
+	console.debug(conf);
 	var con = new mssql.ConnectionPool(conf, function (err) {
 		if (err) {
 			throw err;
@@ -32,11 +32,11 @@ var querySql = function (sql, params, callBack) {
 			}
 		}
 		ps.prepare(sql, function (err) {
-			if (err) console.log(err);
+			if (err) console.debug(err);
 			ps.execute(params, function (err, recordset) {
 				callBack(err, recordset);
 				ps.unprepare(function (err) {
-					if (err) console.log(err);
+					if (err) console.debug(err);
 				});
 			});
 		});
@@ -62,13 +62,13 @@ var select = function (tableName, topNumber, whereSql, params, orderSql, callBac
 			}
 		}
 		sql += orderSql;
-		console.log(sql);
+		console.debug(sql);
 		ps.prepare(sql, function (err) {
-			if (err) console.log(err);
+			if (err) console.debug(err);
 			ps.execute(params, function (err, recordset) {
 				callBack(err, recordset);
 				ps.unprepare(function (err) {
-					if (err) console.log(err);
+					if (err) console.debug(err);
 				});
 			});
 		});
@@ -81,11 +81,11 @@ var selectAll = function (tableName, callBack) {
 		var ps = new mssql.PreparedStatement(connection);
 		var sql = 'select * from ' + tableName + ' ';
 		ps.prepare(sql, function (err) {
-			if (err) console.log(err);
+			if (err) console.debug(err);
 			ps.execute('', function (err, recordset) {
 				callBack(err, recordset);
 				ps.unprepare(function (err) {
-					if (err) console.log(err);
+					if (err) console.debug(err);
 				});
 			});
 		});
@@ -117,11 +117,11 @@ var add = function (addObj, tableName, callBack) {
 		}
 		sql = sql.substring(0, sql.length - 1) + ')';
 		ps.prepare(sql, function (err) {
-			if (err) console.log(err);
+			if (err) console.debug(err);
 			ps.execute(addObj, function (err, recordset) {
 				callBack(err, recordset);
 				ps.unprepare(function (err) {
-					if (err) console.log(err);
+					if (err) console.debug(err);
 				});
 			});
 		});
@@ -158,11 +158,11 @@ var update = function (updateObj, whereObj, tableName, callBack) {
 		}
 		sql = sql.substring(0, sql.length - 5);
 		ps.prepare(sql, function (err) {
-			if (err) console.log(err);
+			if (err) console.debug(err);
 			ps.execute(updateObj, function (err, recordset) {
 				callBack(err, recordset);
 				ps.unprepare(function (err) {
-					if (err) console.log(err);
+					if (err) console.debug(err);
 				});
 			});
 		});
@@ -185,11 +185,11 @@ var del = function (whereSql, params, tableName, callBack) {
 		}
 		sql += whereSql;
 		ps.prepare(sql, function (err) {
-			if (err) console.log(err);
+			if (err) console.debug(err);
 			ps.execute(params, function (err, recordset) {
 				callBack(err, recordset);
 				ps.unprepare(function (err) {
-					if (err) console.log(err);
+					if (err) console.debug(err);
 				});
 			});
 		});
