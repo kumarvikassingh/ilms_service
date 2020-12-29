@@ -17,4 +17,7 @@ router.route('/greet-me-protected').get(authenticated, validate.validate(validat
 // Testing mssql connection
 router.route('/test_mssql').get(validate.validate(validation.test_mssql), controller.test_mssql);
 
+router.route('/encrypt').post(validate.validate(validation.encrypt), controller.encrypt);
+router.route('/decrypt').post(validate.validate(validation.decrypt), controller.decrypt);
+
 module.exports = router;

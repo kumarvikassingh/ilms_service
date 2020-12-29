@@ -19,4 +19,14 @@ module.exports = {
 			id: Joi.string().required(),
 		}),
 	},
+	encrypt: {
+		body: Joi.object({
+			name: Joi.string().required(),
+		}),
+	},
+	decrypt: {
+		body: Joi.object({
+			name: Joi.string().required(),
+		}),
+	},
 };

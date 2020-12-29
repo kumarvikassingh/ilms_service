@@ -4,4 +4,12 @@
 module.exports = {
 	env: process.env.NODE_ENV,
 	port: process.env.PORT,
+	crypto: {
+		algorithm: 'aes-256-ctr',
+		password: 'password',
+		encoding: 'hex',
+		inputEncoding: 'utf8',
+		securityKey: 'DaVinci',
+		pgAlgorithm: 'aes-192-cbc',
+	},
 };
