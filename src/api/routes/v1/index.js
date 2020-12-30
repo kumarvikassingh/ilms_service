@@ -2,6 +2,7 @@ const express = require('express');
 
 // import all the routes here
 const userRoutes = require('./user.route');
+const deliverscannerRoutes = require('./deliverscanner.route');
 
 const router = express.Router();
 
@@ -18,5 +19,6 @@ router.get('/status', (req, res) => {
 });
 
 router.use('/user', userRoutes);
+router.use('/deliverscanner', deliverscannerRoutes);
 
 module.exports = router;
